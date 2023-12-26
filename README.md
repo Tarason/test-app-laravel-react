@@ -1,1 +1,2 @@
-# test-app-laravel-react
+# Laravel + React test app.
+
