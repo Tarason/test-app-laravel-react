@@ -10,6 +10,8 @@ Route::post('/register', [UserAuthController::class,'register']);
 Route::post('/login', [UserAuthController::class,'login']);
 Route::post('/logout', [UserAuthController::class,'logout'])->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
+    Route::put('/users/{user}', [UserController::class, 'update']);
+    Route::delete('/users/{user}', [UserController::class, 'destroy']);
 });

@@ -25,13 +25,15 @@ class PermissionRoleSeeder extends Seeder
         $admin = User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@example.com',
+            'password' => 'password',
         ]);
-        $admin->assignRole($adminRole);
+        $admin->assignRole('admin');
 
 
         $user = User::factory()->create([
             'name' => 'Regular',
             'email' => 'regular@example.com',
+            'password' => 'password',
         ]);
         $user->assignRole($adminRole);
     }

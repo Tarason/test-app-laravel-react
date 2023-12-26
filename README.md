@@ -11,3 +11,8 @@
 
 ### API url `http://localhost:8090/api/`
 ### Frontend url `http://localhost:3000/`
+
+### Users
+Admin: `admin@example.com` / `password`
+
+Regular user: `regular@example.com` / `password`

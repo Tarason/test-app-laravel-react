@@ -22,7 +22,7 @@ class UserAuthController extends Controller
             'name' => $registerUserData['name'],
             'email' => $registerUserData['email'],
             'password' => Hash::make($registerUserData['password']),
-        ]);
+        ])->assignRole('user');
 
         $token = $user->createToken($user->name.'-AuthToken')->plainTextToken;
 
@@ -51,6 +51,7 @@ class UserAuthController extends Controller
 
         return response()->json([
             'access_token' => $token,
+            'role' => $user->roles->pluck('name'),
         ]);
     }
 
